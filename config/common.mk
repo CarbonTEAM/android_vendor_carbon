@@ -244,5 +244,8 @@ ro.romstats.version=$(CARBON_VERSION)
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
+# Include CM audio files
+include vendor/carbon/config/cm_audio.mk
+
 # Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/CopyAudioFiles.mk)
