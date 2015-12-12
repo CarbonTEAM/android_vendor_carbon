@@ -93,9 +93,7 @@ endif
 
 # Carbon-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/carbon/prebuilt/common/etc/init.local.rc:root/init.cm.rc
-#PRODUCT_COPY_FILES += \
-#    vendor/carbon/prebuilt/common/etc/init.carbon.rc:root/init.carbon.rc
+    vendor/carbon/prebuilt/common/etc/init.carbon.rc:root/init.carbon.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES += \
