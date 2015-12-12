@@ -1,6 +1,8 @@
 # brand
 PRODUCT_BRAND ?= Carbon
 
+SUPERUSER_EMBEDDED := true
+
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
 TARGET_BOOTANIMATION_SIZE := $(shell \
@@ -260,13 +262,8 @@ PRODUCT_PACKAGES += \
     unrar \
     curl
 
-# SuperSU
-PRODUCT_COPY_FILES += \
-    vendor/carbon/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-    vendor/carbon/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
+    persist.sys.root_access=3
 
 # languages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
